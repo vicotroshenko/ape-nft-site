@@ -2,23 +2,39 @@
 
 @font-face {
 	font-family: biro-script;
-	src: url("./fonts/BiroScript/BiroScriptPlus.woff2");
+	src: url("./fonts/BiroScript/BiroScriptPlus-Bold.woff2");
 }
 
 @font-face {
 	font-family: messina-sans;
-	src: url("./fonts/MessinaSans/MessinaSansMono-Regular.woff2"), 
-	url("./fonts/MessinaSans/MessinaSansMono-Bold.woff2");
+	src: url("./fonts/MessinaSans/MessinaSansMono-Regular.woff2");
 }
 
 @font-face {
 	font-family: right-grotesk;
-	src: url("./fonts/RightGrotesk/RightGrotesk-Medium.otf");
+	src: url("./fonts/RightGrotesk/RightGrotesk-WideMedium.otf");
+}
+
+:root {
+  --primary-dark-color: #1E1E1E;
+  --secondary-light-color: #FFFFFF;
+  --third-highlight-color: #DC3B5A;
+  --back-color: #000000;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
+  font-family: messina-sans, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  
+  color: var(--secondary-light-color);
+  background-color: var(--back-color);
+
+  text-transform: uppercase;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
 h1,
@@ -41,4 +57,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (min-width: 1280px){
+  body{
+    font-size: 24px;
+  }
 }

@@ -1,0 +1,23 @@
+.section {
+	width: 100%;
+	height: auto;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 60px 72px 0 72px;
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		padding: 80px 88px 0 88px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.container {
+		padding: 120px 204px 0 204px;
+	}
+}
