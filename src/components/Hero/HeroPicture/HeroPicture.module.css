@@ -1,0 +1,22 @@
+.picture {
+	width: auto;
+	height: 284px;
+}
+
+@media screen and (min-width: 768px) {
+	.picture {
+		position: absolute;
+		bottom: -35px;
+		left: 133px;
+		height: 386px;
+		z-index: 9;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.picture {
+		bottom: -81px;
+		left: 250px;
+		height: 612px;
+	}
+}

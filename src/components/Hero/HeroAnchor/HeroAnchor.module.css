@@ -1,0 +1,75 @@
+.meetAnchor {
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	row-gap: 12px;
+	width: 100%;
+	max-width: 216px;
+	text-align: center;
+	z-index: 10;
+}
+
+.meetAnchor>button {
+	width: 100%;
+	min-width: 200px;
+	padding: 10px 70px 12px 70px;
+	border-radius: 8px;
+	border: none;
+	background-color: rgba(30, 30, 30, 0.1);
+	font-size: 16px;
+	font-family: right-grotesk-compact, fantasy;
+	font-weight: 900;
+	line-height: 1.187;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color .3s linear;
+}
+
+.meetAnchor>button:hover, .meetAnchor>button:focus {
+	color: var(--secondary-light-color);
+}
+
+
+@media screen and (min-width: 768px) {
+	.meetAnchor {
+		flex-direction: column;
+		row-gap: 16px;
+		max-width: 190px;
+		margin-left: auto;
+		line-height: 1.166;
+		text-align: justify;
+	}
+
+	.meetAnchor>p::before {
+		content: "";
+		display: inline-block;
+		width: 60px;
+	}
+
+	.meetAnchor>button {
+		padding: 10px 61px 12px 61px;
+		border-radius: 12px;
+	}
+}
+
+
+@media screen and (min-width: 1280px) {
+	.meetAnchor {
+		row-gap: 28px;
+		max-width: 337px;
+		font-size: 16px;
+		line-height: 1.187;
+	}
+
+	.meetAnchor>p::before {
+		content: "";
+		display: inline-block;
+		width: 80px;
+	}
+
+	.meetAnchor>button {
+		padding: 16px 109px 20px 109px;
+		font-size: 28px;
+		line-height: 1.215;
+	}
+}
