@@ -1,0 +1,164 @@
+:root {
+	--sloganLine-height-mobile: 52px;
+	--sloganLine-height-desctop: 86px;
+}
+
+.about {
+	position: relative;
+	margin: 0 auto;
+	display: grid;
+	justify-content: center;
+	padding-bottom: var(--sloganLine-height-mobile);
+}
+
+
+.title {
+	font-family: right-grotesk-compact, fantasy;
+	font-size: 40px;
+	font-weight: 900;
+	text-align: left;
+}
+
+.title>span {
+	display: block;
+}
+
+.title>span:nth-child(-n+2) {
+	display: inline;
+}
+
+.red {
+	color: var(--third-highlight-color);
+}
+
+.text1 {
+	display: inline-block;
+	margin-top: 16px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.187;
+	text-align: right;
+}
+
+.text1>span:nth-child(-n+3),
+.text1>span:nth-child(6),
+.text1>span:nth-child(7) {
+	display: block;
+}
+
+.text2Wrapper {
+	max-width: 216px;
+	margin-top: 36px;
+	justify-self: center;
+}
+
+.text2 {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.16;
+	text-align: center;
+}
+
+.text2Icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto 24px auto;
+}
+
+.picture {
+	display: inline-block;
+	width: 100%;
+	max-width: 216px;
+	margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+	.about {
+		max-width: 592px;
+		grid-template-columns: 269px 275px;
+		grid-template-rows: auto auto;
+		column-gap: 48px;
+		padding-bottom: calc(36px + var(--sloganLine-height-mobile))
+	}
+
+	.title {
+		font-size: 60px;
+	}
+
+	.title>span:nth-child(-n+2) {
+		display: block;
+	}
+
+	.title>span:nth-last-child(-n + 2) {
+		display: inline;
+	}
+
+	.text1 {
+		margin-top: 11px;
+		justify-self: end;
+	}
+
+	.text1>span:nth-child(-n+3),
+	.text1>span:nth-child(6),
+	.text1>span:nth-child(7) {
+		display: inline;
+	}
+
+	.text1>span:last-child {
+		display: block;
+	}
+
+	.text2Wrapper {
+		max-width: 269px;
+		margin-top: 68px;
+	}
+
+	.text2 {
+		font-size: 16px;
+		line-height: 1.187;
+	}
+
+	.picture {
+		position: absolute;
+		right: 0;
+		bottom: var(--sloganLine-height-mobile);
+		max-width: 313px;
+		margin-top: 0;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.about {
+		max-width: 1032px;
+		grid-template-columns: 538px 409px;
+		column-gap: 85px;
+		padding-bottom: calc(40px + var(--sloganLine-height-desctop));
+	}
+
+	.title {
+		max-width: 538px;
+		font-size: 120px;
+	}
+
+	.text1 {
+		margin-top: 24px;
+	}
+
+	.text1,
+	.text2 {
+		max-width: 409px;
+		font-size: 24px;
+		line-height: 1.208;
+	}
+
+	.text2Wrapper {
+		max-width: 417px;
+		margin-top: 56px;
+	}
+
+	.picture {
+		max-width: 492px;
+		bottom: var(--sloganLine-height-desctop);
+	}
+}

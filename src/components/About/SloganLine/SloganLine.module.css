@@ -1,0 +1,52 @@
+.sloganLine {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 100%;
+	transform: translateX(-50%);
+	height: var(--sloganLine-height-mobile);
+	background-color: var(--third-highlight-color);
+	max-width: 1440px;
+	font-size: 36px;
+	font-family: right-grotesk-compact, fantasy;
+	font-weight: 900;
+	overflow: hidden;
+}
+
+.sloganList {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+	height: 100%;
+	list-style-type: none;
+}
+
+.sloganList>li {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.crossIcon {
+	width: 36px;
+	height: 36px;
+	margin-left: 24px;
+	margin-right: 24px;
+}
+
+@media screen and (min-width: 768px) {
+	.sloganLine {}
+}
+
+@media screen and (min-width: 1280px) {
+	.sloganLine {
+		height: var(--sloganLine-height-desctop);
+		font-size: 64px;
+	}
+
+	.crossIcon {
+		margin-left: 36px;
+		margin-right: 36px;
+	}
+}

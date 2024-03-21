@@ -11,7 +11,7 @@ const HeroPicture = () => {
         media="(min-width: 768px) and (max-width: 1279px)"
       />
       <source srcSet={desctopImage} media="(min-width: 1280px)" />
-      <img src={mobileImage} alt="" />
+      <img src={mobileImage} alt="A monkey in glasses and costume" />
     </picture>
   );
 };
