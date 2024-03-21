@@ -8,7 +8,7 @@
 	background-color: var(--third-highlight-color);
 	max-width: 1440px;
 	font-size: 36px;
-	font-family: right-grotesk-compact, fantasy;
+	font-family: "Right Grotesk Compact", fantasy;
 	font-weight: 900;
 	overflow: hidden;
 }
@@ -35,9 +35,6 @@
 	margin-right: 24px;
 }
 
-@media screen and (min-width: 768px) {
-	.sloganLine {}
-}
 
 @media screen and (min-width: 1280px) {
 	.sloganLine {

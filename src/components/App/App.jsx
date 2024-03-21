@@ -1,13 +1,15 @@
 import About from "../About/About";
 import Hero from "../Hero/Hero";
+import Mind from "../Mind/Mind";
 
 
 function App() {
   return (
-    <>
-    <Hero/>
-    <About/>
-    </>
+    <main>
+      <Hero/>
+      <About/>
+      <Mind/>
+    </main>
   );
 }
 

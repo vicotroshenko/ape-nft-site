@@ -1,19 +1,8 @@
 @import-normalize;
+@import url("./fonts/BiroScript/stylesheet.css");
+@import url("./fonts/MessinaSans/stylesheet.css");
+@import url("./fonts/RightGrotesk/stylesheet.css");
 
-@font-face {
-	font-family: biro-script;
-	src: url("./fonts/BiroScript/BiroScriptPlus-Bold.woff2");
-}
-
-@font-face {
-	font-family: messina-sans;
-	src: url("./fonts/MessinaSans/MessinaSansMono-Regular.woff2");
-}
-
-@font-face {
-	font-family: right-grotesk-compact;
-	src: url("./fonts/RightGrotesk/RightGrotesk-CompactBlack.otf");
-}
 
 :root {
   --primary-dark-color: #1E1E1E;
@@ -25,7 +14,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: messina-sans, sans-serif;
+  font-family: "Messina Sans Mono", sans-serif;
   font-size: 12px;
   line-height: 1;
   

@@ -7,7 +7,7 @@
 	font-size: 16px;
 	line-height: 1.69;
 	font-weight: 400;
-	font-family: biro-script, cursive;
+	font-family: 'Biro Script Plus Bold US', cursive;
 	text-transform: initial;
 }
 
@@ -22,7 +22,7 @@
 	flex-wrap: wrap;
 	width: 100%;
 	margin-bottom: 8px;
-	font-family: right-grotesk-compact, fantasy;
+	font-family: "Right Grotesk Compact", fantasy;
 	font-size: 44px;
 	letter-spacing: 0.01em;
 	font-weight: 900;
