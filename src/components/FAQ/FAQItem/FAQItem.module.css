@@ -1,0 +1,86 @@
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	max-width: 216px;
+	margin: 0 auto;
+	padding: 8px 8px 8px 39px;
+	border-radius: 12px;
+}
+
+.wrapper.activeCard {
+	background-color: var(--primary-dark-color);
+	animation: bgChanger .25s linear;
+}
+
+.titleButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	font-family: "Right Grotesk Compact", fantasy;
+	font-size: 20px;
+	font-weight: 900;
+	color: var(--secondary-light-color);
+	text-align: left;
+	cursor: pointer;
+}
+
+.title {
+	max-width: 169px;
+}
+
+.title.active,
+.titleNumber {
+	--active-color: var(--third-highlight-color);
+	color: var(--active-color);
+	animation: colorChanger .25s linear;
+}
+
+.titleNumber {
+	position: absolute;
+	top: 12px;
+	left: 8px;
+	margin-right: 8px;
+	font-family: 'Biro Script Plus Bold US', cursive;
+	font-size: 12px;
+	line-height: 1.16;
+}
+
+.titleNumber.activeNumber {
+	--active-color: var(--secondary-light-color);
+	color: var(--active-color);
+	animation: colorChanger .25s linear;
+}
+
+.wrapper .textContainer {
+	transition: height .3s ease-in-out;
+}
+
+.wrapper .textContent {
+	padding-top: 10px;
+	font-size: 12px;
+	line-height: 1.16;
+}
+
+@keyframes colorChanger {
+	from {
+		color: inherit;
+	}
+
+	to {
+		color: var(--active-color);
+	}
+}
+
+@keyframes bgChanger {
+	from {
+		background-color: transparent;
+	}
+
+	to {
+		background-color: var(--primary-dark-color);
+	}
+}

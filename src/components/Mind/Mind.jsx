@@ -3,6 +3,7 @@ import Container from "../Container/Container";
 import styles from "./Mind.module.css";
 import { ReactComponent as ArrowIcon } from "../../images/svg/up-left-arrow.svg";
 import { useState } from "react";
+import SubTitle from "../SubTitle/SubTitle";
 
 const mindCollection = [
   {
@@ -44,7 +45,7 @@ const Mind = () => {
 
   return (
     <Container>
-      <h3 style={{ marginBottom: "30px", textAlign: "center" }}>mind map</h3>
+      <SubTitle>mind map</SubTitle>
       <div
         className={styles.sliderContainer}
         style={{ "--slide": `${cardNum}` }}
