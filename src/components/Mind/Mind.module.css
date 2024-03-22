@@ -16,30 +16,6 @@
 	list-style-type: none;
 }
 
-.buttons {
-	display: flex;
-	gap: 48px;
-	justify-content: center;
-	width: 100%;
-	margin-top: 24px;
-}
-
-.buttons>button {
-	border: none;
-	background-color: transparent;
-	text-transform: capitalize;
-	font-family: 'Biro Script Plus Bold US', cursive;
-	font-size: 24px;
-	line-height: 1;
-	color: var(--secondary-light-color);
-	cursor: pointer;
-	transition: color .1s linear;
-}
-
-.buttons>button:active {
-	color: var(--third-highlight-color);
-}
-
 .lastItemLink {
 	display: flex;
 	flex-direction: column;
@@ -82,15 +58,15 @@
 		transform: translateX(0);
 	}
 
-	.buttons {
-		display: none;
-	}
-
 	.lastItemLink {
 		width: 100%;
 		padding: 24px;
 		border-radius: 16px;
 		cursor: pointer;
+	}
+	
+	.tableHidden {
+		display: none;
 	}
 }
 

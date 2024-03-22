@@ -8,7 +8,7 @@ const FAQItem = ({ title, text, image, number, isOpen, onClick }) => {
     <div className={`${styles.wrapper} ${isOpen ? styles.activeCard : ""}`}>
       {isOpen && (
         <div className={styles.accordionImage}>
-          <img src={image} alt={title} />
+          <img src={image} alt={title} loading="lazy" />
         </div>
       )}
       <div className={styles.content}>

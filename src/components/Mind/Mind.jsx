@@ -4,42 +4,21 @@ import styles from "./Mind.module.css";
 import { ReactComponent as ArrowIcon } from "../../images/svg/up-left-arrow.svg";
 import { useState } from "react";
 import SubTitle from "../SubTitle/SubTitle";
+import SliderButtons from "../SliderButtons/SliderButtons";
+import { mindCollection } from "../../data/mind";
 
-const mindCollection = [
-  {
-    text: "All owners of APE NFTs and all future collections will receive a percentage of sales based on the number of NFTs they own",
-    title: "YAPE DROP",
-    id: "0001",
-  },
-  {
-    text: "Launch of the 2nd YACHT Collection Releasing the first version of the Ape Slam Game",
-    title: "New Collection",
-    id: "0002",
-  },
-  {
-    text: "Launch your own token, the proceeds of which will go to a global fund to LAUNCH YACHT CLUB AND PROMOTE it",
-    title: "Token",
-    id: "0003",
-  },
-];
-
-const prev = "prev";
-const next = "next";
 
 const Mind = () => {
   const [cardNum, setCardNum] = useState(0);
 
   const handleCardClick = (e) => {
     const { name } = e.currentTarget;
-    switch (name) {
-      case prev:
-        setCardNum((prev) => prev - 1);
-        break;
-      case next:
-        setCardNum((prev) => prev + 1);
-        break;
-      default:
-        return;
+
+    if (name === "prev") {
+      setCardNum((prev) => prev - 1);
+    }
+    if (name === "next") {
+      setCardNum((prev) => prev + 1);
     }
   };
 
@@ -65,25 +44,12 @@ const Mind = () => {
           </li>
         </ul>
       </div>
-      <div className={styles.buttons}>
-        <button
-          type="button"
-          name={prev}
+      <div className={styles.tableHidden}>
+        <SliderButtons
           onClick={handleCardClick}
-          aria-label="open prev card"
-          disabled={cardNum === 0}
-        >
-          Prev
-        </button>
-        <button
-          type="button"
-          name={next}
-          onClick={handleCardClick}
-          aria-label="open next card"
-          disabled={cardNum === mindCollection.length}
-        >
-          Next
-        </button>
+          disabledPrev={cardNum === 0}
+          disabledNext={cardNum === mindCollection.length}
+        />
       </div>
     </Container>
   );

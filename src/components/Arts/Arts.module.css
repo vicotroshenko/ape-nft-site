@@ -1,0 +1,51 @@
+.sliderContainer {
+	width: 216px;
+	overflow: hidden;
+}
+
+.list {
+	display: flex;
+	column-gap: 24px;
+	width: max-content;
+	list-style-type: none;
+}
+
+.item {
+	width: 100%;
+	max-width: 216px;
+	height: 256px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.pictureContainer {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.pictureContainer img {
+	object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+	.sliderContainer {
+		width: 592px;
+	}
+
+	.item {
+		max-width: 284px;
+		min-height: 336px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.sliderContainer {
+		width: 1032px;
+	}
+
+	.item {
+		max-width: 240px;
+		min-height: 280px;
+	}
+}
