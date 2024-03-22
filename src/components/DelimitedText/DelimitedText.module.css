@@ -1,5 +1,4 @@
 .text2Wrapper {
-	margin-top: 36px;
 	justify-self: center;
 	text-transform: uppercase;
 }
@@ -22,7 +21,6 @@
 @media screen and (min-width: 768px) {
 	.text2Wrapper {
 		max-width: 269px;
-		margin-top: 68px;
 	}
 
 	.text2 {
@@ -34,7 +32,6 @@
 @media screen and (min-width: 1280px) {
 	.text2Wrapper {
 		max-width: 417px;
-		margin-top: 56px;
 	}
 	
 	.text2 {

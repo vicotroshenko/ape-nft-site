@@ -54,6 +54,10 @@
 	margin-top: 40px;
 }
 
+.text2Wrapper {
+	margin-top: 36px;
+}
+
 @media screen and (min-width: 768px) {
 	.about {
 		max-width: 592px;
@@ -90,6 +94,10 @@
 		display: block;
 	}
 
+	.text2Wrapper {
+		margin-top: 68px;
+	}
+
 	.picture {
 		position: absolute;
 		right: 0;
@@ -120,6 +128,10 @@
 		max-width: 409px;
 		font-size: 24px;
 		line-height: 1.208;
+	}
+
+	.text2Wrapper {
+		margin-top: 56px;
 	}
 
 	.picture {
