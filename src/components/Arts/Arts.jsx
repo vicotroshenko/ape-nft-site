@@ -65,7 +65,7 @@ const Arts = () => {
   };
 
   return (
-    <Container>
+    <Container id="arts">
       <SubTitle>COLLECTION</SubTitle>
       <div className={styles.sliderContainer}>
         <ul className={styles.list} ref={sliderRef}>

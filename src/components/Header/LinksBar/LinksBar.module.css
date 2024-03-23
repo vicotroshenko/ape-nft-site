@@ -1,0 +1,32 @@
+.linkContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.linkLogo {
+	width: 16px;
+	height: 16px;
+}
+
+.linkContainer > a svg{
+	transition: fill .25s linear;
+}
+
+.linkContainer > a:hover svg {
+	fill: var(--secondary-light-color);
+}
+
+@media screen and (min-width: 768px) {
+	.linkLogo {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.linkContainer {
+		gap: 16px;
+	}
+}

@@ -1,0 +1,26 @@
+.link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 8px;
+	text-decoration: none;
+	background-color: rgba(30, 30, 30, 0.1);
+}
+
+.link.light {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.link.light > svg {
+	fill: var(--secondary-light-color);
+}
+
+@media screen and (min-width: 1280px) {
+	.link {
+		width: 80px;
+		height: 80px;
+		border-radius: 12px;
+	}
+}

@@ -9,6 +9,7 @@
   --secondary-light-color: #FFFFFF;
   --third-highlight-color: #DC3B5A;
   --back-color: #000000;
+  --slide: 0;
 }
 
 body {
@@ -17,10 +18,8 @@ body {
   font-family: "Messina Sans Mono", sans-serif;
   font-size: 12px;
   line-height: 1;
-  
   color: var(--secondary-light-color);
   background-color: var(--back-color);
-
   text-transform: uppercase;
 }
 

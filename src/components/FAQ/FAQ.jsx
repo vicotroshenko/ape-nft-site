@@ -13,7 +13,7 @@ const FAQ = () => {
   };
 
   return (
-    <Container>
+    <Container id="faq">
       <SubTitle>faq</SubTitle>
       <div className={styles.itemsWrapper}>
         {faqCollection.map(({ title, text, id, image }, index) => (

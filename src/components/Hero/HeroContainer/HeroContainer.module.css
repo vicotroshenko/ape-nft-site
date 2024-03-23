@@ -1,13 +1,13 @@
 .section {
 	width: 100%;
 	height: auto;
-	padding: 0 16px;
+	padding: 0 8px;
 }
 
 .container {
 	width: 100%;
 	min-height: 542px;
-	max-width: 1408px;
+	max-width: 480px;
 	min-width: 300px;
 	margin: 0 auto;
 	padding: 36px 64px 19px 64px;
@@ -27,8 +27,13 @@
 }
 
 @media screen and (min-width: 768px) {
+	.section {
+		padding: 0 16px;
+	}
+	
 	.container {
 		min-height: 421px;
+		max-width: 736px;
 		padding: 124px 72px 35px 73px;
 		border-radius: 16px;
 	}
@@ -41,6 +46,8 @@
 @media screen and (min-width: 1280px) {
 	.container {
 		min-height: 677px;
+		width: 1408px;
+		max-width: none;
 		padding: 197px 194px 81px 195px;
 		border-radius: 24px;
 	}

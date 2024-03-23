@@ -1,0 +1,10 @@
+.openButtons {
+	display: flex;
+	margin-bottom: 8px;
+}
+
+@media screen and (min-width: 1280px){
+	.openButtons {
+		margin-bottom: 16px;
+	}
+}

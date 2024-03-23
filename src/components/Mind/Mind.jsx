@@ -23,7 +23,7 @@ const Mind = () => {
   };
 
   return (
-    <Container>
+    <Container id="mind">
       <SubTitle>mind map</SubTitle>
       <div
         className={styles.sliderContainer}

@@ -7,7 +7,7 @@ import foxIcon from "../../images/png/Logos.png";
 
 const Сontact = () => {
   return (
-    <Container>
+    <Container id="contact">
       <SubTitle>are you in?</SubTitle>
       <DelimitedText>
         Join the YACHT APE community to be one of the first to receive our

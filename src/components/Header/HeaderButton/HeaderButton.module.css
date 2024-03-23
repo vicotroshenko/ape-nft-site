@@ -1,0 +1,114 @@
+:root {
+	--buttons-width: 48px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+	border: none;
+	padding: 0;
+	background-color: rgba(30, 30, 30, 0.1);
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.16;
+	font-size: 12px;
+	font-family: "Messina Sans Mono", sans-serif;
+	opacity: 1;
+	cursor: pointer;
+	transition: all .25s linear;
+	animation: buttonsShowUp .25s linear;
+}
+
+.button.light {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--secondary-light-color);
+}
+
+.button:hover {
+	color: var(--secondary-light-color);
+	text-decoration: underline;
+}
+
+.button:first-child {
+	border-radius: 8px 0 0 8px;
+}
+
+.button:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.button.hidden {
+	display: none;
+	width: 0;
+	opacity: 0;
+	animation: buttonsHidden .25s linear;
+}
+
+.button.toggleClose {
+	border-radius: 8px;
+}
+
+.button.toggleClose.light{
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--secondary-light-color);
+}
+
+
+@media screen and (min-width: 1280px) {
+	.button {
+		--buttons-width: 80px;
+		width: 80px;
+		height: 80px;
+		font-size: 16px;
+		line-height: 1.187;
+	}
+
+	.button:first-child {
+		border-radius: 12px 0 0 12px;
+	}
+
+	.button:last-child {
+		border-radius: 0 12px 12px 0;
+	}
+	
+	.button.toggleClose{
+		border-radius: 12px;
+	}
+	
+}
+
+@keyframes buttonsShowUp {
+	0% {
+		display: none;
+		width: 0;
+		opacity: 0;
+	}
+	80% {
+		opacity: 0.3;
+		width: var(--buttons-width);
+	}
+	100% {
+		display: block;
+		width: var(--buttons-width);
+		opacity: 1;
+	}
+}
+
+@keyframes buttonsHidden {
+	0% {
+		display: block;
+		width: var(--buttons-width);
+		opacity: 1;
+
+	}
+	30% {
+		opacity: 0;	
+	}
+	100% {
+		display: none;
+		width: 0;
+	}
+}

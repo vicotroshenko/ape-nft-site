@@ -1,5 +1,5 @@
-:root {
-	--sloganLine-height-mobile: 52px;
+:root{
+  --sloganLine-height-mobile: 52px;
 	--sloganLine-height-desctop: 86px;
 }
 
@@ -9,7 +9,6 @@
 	display: grid;
 	justify-content: center;
 	padding-bottom: var(--sloganLine-height-mobile);
-	max-width: 216px;
 }
 
 
@@ -60,7 +59,6 @@
 
 @media screen and (min-width: 768px) {
 	.about {
-		max-width: 592px;
 		grid-template-columns: 269px 275px;
 		grid-template-rows: auto auto;
 		column-gap: 48px;
@@ -109,7 +107,6 @@
 
 @media screen and (min-width: 1280px) {
 	.about {
-		max-width: 1032px;
 		grid-template-columns: 538px 409px;
 		column-gap: 85px;
 		padding-bottom: calc(40px + var(--sloganLine-height-desctop));
