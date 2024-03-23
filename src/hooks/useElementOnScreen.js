@@ -15,7 +15,7 @@ export const useElementOnScreen = ({ marginTop = 0 }) => {
       }
     };
 
-    window.addEventListener("scroll", throttle(handleScroll, 500));
+    window.addEventListener("scroll", throttle(handleScroll, 300));
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [marginTop]);

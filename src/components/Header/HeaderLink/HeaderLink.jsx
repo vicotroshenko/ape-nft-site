@@ -1,21 +1,24 @@
-import { useElementOnScreen } from "../../../hooks/useElementOnScreen";
+import { forwardRef } from "react";
 import styles from "./HeaderLink.module.css";
 
-const HeaderLink = ({ children, link }) => {
-  const [containerRef, visible] = useElementOnScreen({
-    marginTop: 30,
-  });
+const HeaderLink = forwardRef(({ children, link, visible, openMenu }, ref) => {
+  const getStyles = () => {
+    if (!visible) {
+      return `${styles.link}`;
+    }
+    if (visible && openMenu) {
+      return `${styles.link} ${styles.light}`;
+    }
+    if (visible && !openMenu) {
+      return `${styles.link} ${styles.hidden}`;
+    }
+  };
 
   return (
-    <a
-      href={link}
-      className={!visible ? styles.link : `${styles.link} ${styles.light}`}
-      target="blank"
-      ref={containerRef}
-    >
+    <a href={link} className={getStyles()} target="blank" ref={ref}>
       {children}
     </a>
   );
-};
+});
 
 export default HeaderLink;

@@ -9,13 +9,6 @@
 	height: 16px;
 }
 
-.linkContainer > a svg{
-	transition: fill .25s linear;
-}
-
-.linkContainer > a:hover svg {
-	fill: var(--secondary-light-color);
-}
 
 @media screen and (min-width: 768px) {
 	.linkLogo {

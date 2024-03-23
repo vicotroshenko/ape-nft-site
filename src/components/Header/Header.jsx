@@ -7,6 +7,16 @@ import throttle from "lodash.throttle";
 
 const Header = () => {
   const [visible, setVisible] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const menuToggle = () => setOpenMenu((prev) => !prev);
+
+  const getViewElement = (element) => {
+    setOpenMenu(false);
+    document.querySelector(element).scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +41,12 @@ const Header = () => {
           </a>
         </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonsBar />
-          <LinkBar />
+          <ButtonsBar
+            openMenu={openMenu}
+            onClick={getViewElement}
+            onToggle={menuToggle}
+          />
+          <LinkBar openMenu={openMenu} />
         </div>
       </div>
     </header>

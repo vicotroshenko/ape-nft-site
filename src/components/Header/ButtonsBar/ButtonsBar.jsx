@@ -1,57 +1,45 @@
 import styles from "./ButtonsBar.module.css";
 import HeaderButton from "../HeaderButton/HeaderButton";
-import { useState } from "react";
 
-const ButtonsBar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-
-  const menuToggle = () => setOpenMenu((prev) => !prev);
-
-  const getViewElement = (element) => {
-    setOpenMenu(false);
-    document.querySelector(element).scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
+const ButtonsBar = ({ openMenu, onClick, onToggle }) => {
   return (
     <div className={styles.openButtons}>
       <HeaderButton
         visibleMenu={openMenu}
         name="anchor"
-        onClick={() => getViewElement("#about")}
+        onClick={() => onClick("#about")}
       >
         about
       </HeaderButton>
       <HeaderButton
         visibleMenu={openMenu}
         name="anchor"
-        onClick={() => getViewElement("#mind")}
+        onClick={() => onClick("#mind")}
       >
         m-map
       </HeaderButton>
       <HeaderButton
         visibleMenu={openMenu}
         name="anchor"
-        onClick={() => getViewElement("#faq")}
+        onClick={() => onClick("#faq")}
       >
         faq
       </HeaderButton>
       <HeaderButton
         visibleMenu={openMenu}
         name="anchor"
-        onClick={() => getViewElement("#arts")}
+        onClick={() => onClick("#arts")}
       >
         arts
       </HeaderButton>
       <HeaderButton
         visibleMenu={openMenu}
         name="anchor"
-        onClick={() => getViewElement("#contact")}
+        onClick={() => onClick("#contact")}
       >
         mint
       </HeaderButton>
-      <HeaderButton visibleMenu={openMenu} name="toggle" onClick={menuToggle}>
+      <HeaderButton visibleMenu={openMenu} name="toggle" onClick={onToggle}>
         {openMenu ? "Close" : "Menu"}
       </HeaderButton>
     </div>

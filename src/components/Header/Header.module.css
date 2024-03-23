@@ -4,6 +4,7 @@
 	top: 0;
 	width: 100%;
 	z-index: 44;
+	pointer-events: none;
 }
 
 .headerContainer {
@@ -37,7 +38,7 @@
 
 @media screen and (min-width: 768px) {
 	.headerContainer {
-		max-width: 736px;
+		max-width: 768px;
 		padding: 12px 28px 0 28px;
 	}
 }
@@ -53,7 +54,7 @@
 	}
 
 	.headerContainer {
-		max-width: 1408px;
+		max-width: 1440px;
 		padding: 24px 112px 0 112px;
 	}
 }
