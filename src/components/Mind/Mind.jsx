@@ -54,7 +54,7 @@ const Mind = () => {
             <>
               {" "}
               {mindCollection.map(({ text, title, id }) => (
-                <MindCard text={text} title={title} />
+                <MindCard text={text} title={title}  key={id}/>
               ))}
               <li>
                 <a

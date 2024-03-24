@@ -23,6 +23,7 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: color .3s linear;
+	backdrop-filter: blur(7px);
 }
 
 .meetAnchor>button:hover, .meetAnchor>button:focus {
