@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ape-nft-site/static/css/main.87fecf28.css",
-    "main.js": "/ape-nft-site/static/js/main.2487f1ff.js",
+    "main.css": "/ape-nft-site/static/css/main.2cd1d535.css",
+    "main.js": "/ape-nft-site/static/js/main.91bf5e18.js",
     "static/media/BiroScriptUSPlus-Sloppy.eot": "/ape-nft-site/static/media/BiroScriptUSPlus-Sloppy.5ca5e866111ab6b0e8a3.eot",
     "static/media/BiroScriptUSPlus-Sloppy.ttf": "/ape-nft-site/static/media/BiroScriptUSPlus-Sloppy.10812daae86fa2a0d3ab.ttf",
     "static/media/BiroScriptPlus-Sloppy.eot": "/ape-nft-site/static/media/BiroScriptPlus-Sloppy.857bca03a4cce14fd651.eot",
@@ -79,18 +79,18 @@
     "static/media/art14.jpg": "/ape-nft-site/static/media/art14.3508485797346ea47aab.jpg",
     "static/media/art5.jpg": "/ape-nft-site/static/media/art5.7b36e4d86ee70a59c335.jpg",
     "static/media/art3.jpg": "/ape-nft-site/static/media/art3.0665662ba645e3018238.jpg",
-    "static/media/headerLogo.svg": "/ape-nft-site/static/media/headerLogo.c49b5e84d7187ad81fcc813d4fe4e2d9.svg",
+    "static/media/headerLogo.svg": "/ape-nft-site/static/media/headerLogo.e4b5121f34933e95ff5abed21823dd25.svg",
     "static/media/ship-logo.svg": "/ape-nft-site/static/media/ship-logo.8dd670e85f868e194f98f03d268aea4e.svg",
     "static/media/discord_logo.svg": "/ape-nft-site/static/media/discord_logo.f0c7c7280e566e0ef6802cb2a492768a.svg",
     "index.html": "/ape-nft-site/index.html",
     "static/media/x-logo.svg": "/ape-nft-site/static/media/x-logo.2ac8ba41f610def84087bdcbf1b24691.svg",
     "static/media/add-sharp.svg": "/ape-nft-site/static/media/add-sharp.b5c82aa4b9533f384d1b6fbd4eda9c8a.svg",
     "static/media/up-left-arrow.svg": "/ape-nft-site/static/media/up-left-arrow.3e1731beb60715fd163d29b7d6ffeeff.svg",
-    "main.87fecf28.css.map": "/ape-nft-site/static/css/main.87fecf28.css.map",
-    "main.2487f1ff.js.map": "/ape-nft-site/static/js/main.2487f1ff.js.map"
+    "main.2cd1d535.css.map": "/ape-nft-site/static/css/main.2cd1d535.css.map",
+    "main.91bf5e18.js.map": "/ape-nft-site/static/js/main.91bf5e18.js.map"
   },
   "entrypoints": [
-    "static/css/main.87fecf28.css",
-    "static/js/main.2487f1ff.js"
+    "static/css/main.2cd1d535.css",
+    "static/js/main.91bf5e18.js"
   ]
 }
