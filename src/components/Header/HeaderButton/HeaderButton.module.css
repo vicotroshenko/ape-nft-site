@@ -9,12 +9,14 @@
 	width: 48px;
 	height: 48px;
 	border: none;
-	padding: 0;
+	border-radius: 8px;
 	background-color: rgba(30, 30, 30, 0.1);
+	padding: 0;
 	text-transform: uppercase;
 	font-weight: 600;
 	line-height: 1.16;
 	font-size: 12px;
+	color: var(--primary-dark-color);
 	font-family: "Messina Sans Mono", sans-serif;
 	opacity: 1;
 	cursor: pointer;
@@ -33,33 +35,63 @@
 	text-decoration: underline;
 }
 
-.button:first-child {
-	border-radius: 8px 0 0 8px;
-}
-
-.button:last-child {
-	border-radius: 0 8px 8px 0;
-}
-
-.button.hidden {
+.button:nth-child(-n+5) {
 	display: none;
-	width: 0;
-	opacity: 0;
-	animation: buttonsHidden .25s linear;
 }
 
-.button.toggleClose {
-	border-radius: 8px;
+@media screen and (max-width: 768px) {
+	.button.mobileOpen {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: var(--secondary-light-color);
+		transition: all .25s linear;
+	}
+
+	.button.mobileOpen:hover {
+		color: var(--third-highlight-color);
+	}
 }
 
-.button.toggleClose.light {
-	background-color: rgba(255, 255, 255, 0.1);
-	color: var(--secondary-light-color);
-	transition: all .25s linear;
-}
+@media screen and (min-width: 768px) {
+	.button {
+		border-radius: unset;
+	}
 
-.button.light:hover {
-	color: var(--third-highlight-color);
+	.button.mobileOpen {
+		background-color: rgba(30, 30, 30, 0.1);
+	}
+
+	.button:nth-child(-n+5) {
+		display: flex;
+	}
+
+	.button.hidden {
+		display: none;
+		width: 0;
+		opacity: 0;
+		animation: buttonsHidden .25s linear;
+	}
+
+	.button:first-child {
+		border-radius: 8px 0 0 8px;
+	}
+
+	.button:last-child {
+		border-radius: 0 8px 8px 0;
+	}
+
+	.button.toggleClose {
+		border-radius: 8px;
+	}
+
+	.button.light {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: var(--secondary-light-color);
+		transition: all .25s linear;
+	}
+
+	.button.light:hover {
+		color: var(--third-highlight-color);
+	}
 }
 
 

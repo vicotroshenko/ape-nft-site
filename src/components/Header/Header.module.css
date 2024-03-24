@@ -15,16 +15,6 @@
 	margin: 0 auto;
 }
 
-.linkLogo {
-	display: block;
-	margin-top: 8px;
-	cursor:	pointer;
-}
-
-.logo {
-	width: 48px;
-	height: 32px;
-}
 
 .buttonsWrapper {
 	display: flex;
@@ -44,15 +34,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-	.linkLogo {
-		margin-top: 15px;
-	}
-
-	.logo {
-		width: 72px;
-		height: 50px;
-	}
-
 	.headerContainer {
 		max-width: 1440px;
 		padding: 24px 112px 0 112px;

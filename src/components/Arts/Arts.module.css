@@ -3,19 +3,17 @@
 	overflow: hidden;
 }
 
-.list {
-	display: flex;
-	column-gap: 24px;
-	width: max-content;
-	list-style-type: none;
-}
-
 .item {
 	width: 100%;
 	max-width: 216px;
 	height: 256px;
 	border-radius: 12px;
 	overflow: hidden;
+	pointer-events: none;
+	
+}
+.item img {
+	pointer-events: none;
 }
 
 .pictureContainer {

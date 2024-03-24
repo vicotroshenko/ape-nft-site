@@ -1,7 +1,12 @@
 import styles from "./ButtonsBar.module.css";
 import HeaderButton from "../HeaderButton/HeaderButton";
 
-const ButtonsBar = ({ openMenu, onClick, onToggle }) => {
+const ButtonsBar = ({
+  openMenu = false,
+  openMobileMenu = false,
+  onClick,
+  onToggle,
+}) => {
   return (
     <div className={styles.openButtons}>
       <HeaderButton
@@ -39,8 +44,13 @@ const ButtonsBar = ({ openMenu, onClick, onToggle }) => {
       >
         mint
       </HeaderButton>
-      <HeaderButton visibleMenu={openMenu} name="toggle" onClick={onToggle}>
-        {openMenu ? "Close" : "Menu"}
+
+      <HeaderButton
+        visibleMenu={openMenu || openMobileMenu}
+        name="toggle"
+        onClick={onToggle}
+      >
+        {openMenu || openMobileMenu ? "Close" : "Menu"}
       </HeaderButton>
     </div>
   );

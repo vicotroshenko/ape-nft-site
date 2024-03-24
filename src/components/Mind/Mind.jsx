@@ -6,50 +6,73 @@ import { useState } from "react";
 import SubTitle from "../SubTitle/SubTitle";
 import SliderButtons from "../SliderButtons/SliderButtons";
 import { mindCollection } from "../../data/mind";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "react-responsive";
 
 const Mind = () => {
-  const [cardNum, setCardNum] = useState(0);
+  const [swiperRef, setSwiperRef] = useState(null);
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const handleCardClick = (e) => {
     const { name } = e.currentTarget;
 
     if (name === "prev") {
-      setCardNum((prev) => prev - 1);
+      swiperRef.slidePrev();
     }
     if (name === "next") {
-      setCardNum((prev) => prev + 1);
+      swiperRef.slideNext();
     }
   };
 
   return (
     <Container id="mind">
       <SubTitle>mind map</SubTitle>
-      <div
-        className={styles.sliderContainer}
-        style={{ "--slide": `${cardNum}` }}
-      >
+      <div className={styles.sliderContainer}>
         <ul className={styles.slider}>
-          {mindCollection.map(({ text, title, id }) => (
-            <MindCard text={text} title={title} key={id} />
-          ))}
-          <li>
-            <a
-              href="https://www.google.com.ua/"
-              className={styles.lastItemLink}
-            >
-              <ArrowIcon className={styles.arrowIcon} />
-              <h4 className={styles.lastItemTitle}>Learn more in mind map</h4>
-            </a>
-          </li>
+          {isMobile ? (
+            <Swiper spaceBetween={24} slidesPerView={1} onSwiper={setSwiperRef}>
+              {mindCollection.map(({ text, title, id }) => (
+                <SwiperSlide key={id}>
+                  <MindCard text={text} title={title} />
+                </SwiperSlide>
+              ))}
+              <SwiperSlide>
+                <li>
+                  <a
+                    href="https://www.google.com.ua/"
+                    className={styles.lastItemLink}
+                  >
+                    <ArrowIcon className={styles.arrowIcon} />
+                    <h4 className={styles.lastItemTitle}>
+                      Learn more in mind map
+                    </h4>
+                  </a>
+                </li>
+              </SwiperSlide>
+            </Swiper>
+          ) : (
+            <>
+              {" "}
+              {mindCollection.map(({ text, title, id }) => (
+                <MindCard text={text} title={title} />
+              ))}
+              <li>
+                <a
+                  href="https://www.google.com.ua/"
+                  className={styles.lastItemLink}
+                >
+                  <ArrowIcon className={styles.arrowIcon} />
+                  <h4 className={styles.lastItemTitle}>
+                    Learn more in mind map
+                  </h4>
+                </a>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className={styles.tableHidden}>
-        <SliderButtons
-          onClick={handleCardClick}
-          disabledPrev={cardNum === 0}
-          disabledNext={cardNum === mindCollection.length}
-        />
+        <SliderButtons onClick={handleCardClick} />
       </div>
     </Container>
   );

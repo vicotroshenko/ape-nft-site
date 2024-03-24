@@ -5,7 +5,7 @@ const HeroAnchor = () => {
     document.querySelector(element).scrollIntoView({
       behavior: "smooth",
     });
-    
+
   return (
     <div className={styles.meetAnchor}>
       <p>

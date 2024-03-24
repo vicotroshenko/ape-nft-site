@@ -1,0 +1,47 @@
+.mobileMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: calc(100% - 80px);
+	max-width: 328px;
+	padding: 62px 16px 0 16px;
+	color: var(--secondary-light-color);
+}
+
+.mobileButtonBar {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	gap: 16px;
+
+}
+
+.mobileButtonBar>button {
+	background-color: inherit;
+	border: none;
+	font-size: 24px;
+	line-height: 1;
+	color: var(--secondary-light-color);
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.bottomText {
+	max-width: 216px;
+	padding-bottom: 80px;
+	line-height: 1.16;
+	color: var(--secondary-light-color);
+	text-align: center;
+}

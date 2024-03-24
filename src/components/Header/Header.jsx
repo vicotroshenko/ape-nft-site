@@ -1,13 +1,17 @@
 import ButtonsBar from "./ButtonsBar/ButtonsBar";
 import styles from "./Header.module.css";
 import LinkBar from "./LinksBar/LinksBar";
-import { ReactComponent as Logo } from "../../images/svg/headerLogo.svg";
 import { useEffect, useState } from "react";
 import throttle from "lodash.throttle";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import Logo from "./Logo/Logo";
+import { useMediaQuery } from "react-responsive";
 
 const Header = () => {
   const [visible, setVisible] = useState(true);
   const [openMenu, setOpenMenu] = useState(false);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const menuToggle = () => setOpenMenu((prev) => !prev);
 
@@ -33,23 +37,28 @@ const Header = () => {
   }, [visible]);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerContainer}>
-        <div className={!visible ? styles.hidden : {}}>
-          <a href="/" className={styles.linkLogo}>
-            <Logo className={styles.logo} />
-          </a>
+    <>
+      {isMobile && (
+        <MobileMenu
+          toggle={menuToggle}
+          visible={openMenu}
+          getViewElement={getViewElement}
+        />
+      )}
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          <Logo visible={visible} fill="#1E1E1E" />
+          <div className={styles.buttonsWrapper}>
+            <ButtonsBar
+              openMenu={openMenu}
+              onClick={getViewElement}
+              onToggle={menuToggle}
+            />
+            <LinkBar openMenu={openMenu} />
+          </div>
         </div>
-        <div className={styles.buttonsWrapper}>
-          <ButtonsBar
-            openMenu={openMenu}
-            onClick={getViewElement}
-            onToggle={menuToggle}
-          />
-          <LinkBar openMenu={openMenu} />
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

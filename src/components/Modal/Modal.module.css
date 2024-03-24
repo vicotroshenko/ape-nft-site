@@ -1,0 +1,61 @@
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 400;
+}
+
+.backdrop.show {
+	visibility: visible;
+	opacity: 1;
+	animation: modalShow .25s ease-out;
+}
+
+.backdrop.hide {
+	visibility: hidden;
+	opacity: 0;
+	animation: modalClose .25s ease-in;
+}
+
+.container{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	overflow-y: auto;
+	background-color: black;
+	transition: transform .25s linear;
+}
+
+.backdrop.show .container {
+	transform: translate(-50%, 0);
+}
+
+.backdrop.hide .container {
+	transform: translate(-50%, -210%);
+}
+
+@keyframes modalShow {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes modalClose {
+	0% {
+		opacity: 1;
+		visibility: visible;
+
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

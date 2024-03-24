@@ -1,0 +1,26 @@
+.linkLogo {
+	display: block;
+	margin-top: 8px;
+	cursor:	pointer;
+}
+
+.logo {
+	width: 48px;
+	height: 32px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+
+@media screen and (min-width: 1280px) {
+	.linkLogo {
+		margin-top: 15px;
+	}
+
+	.logo {
+		width: 72px;
+		height: 50px;
+	}
+}

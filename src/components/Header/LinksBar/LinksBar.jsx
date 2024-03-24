@@ -5,7 +5,7 @@ import { ReactComponent as XLogo } from "../../../images/svg/x-logo.svg";
 import styles from "./LinksBar.module.css";
 import { useElementOnScreen } from "../../../hooks/useElementOnScreen";
 
-const LinkBar = ({ openMenu }) => {
+const LinkBar = ({ openMenu=false }) => {
   const [containerRef, visible] = useElementOnScreen({
     marginTop: 30,
   });

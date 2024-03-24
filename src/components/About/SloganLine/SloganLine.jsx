@@ -15,6 +15,28 @@ const SloganLine = () => {
         </li>
         <li>Break rules</li>
       </ul>
+      <ul className={styles.sloganList}>
+        <li>Destroy stereotypes</li>
+        <li>
+          <AddIcon className={styles.crossIcon} />
+        </li>
+        <li>HAVE NO LIMITS</li>
+        <li>
+          <AddIcon className={styles.crossIcon} />
+        </li>
+        <li>Break rules</li>
+      </ul>
+      <ul className={styles.sloganList}>
+        <li>Destroy stereotypes</li>
+        <li>
+          <AddIcon className={styles.crossIcon} />
+        </li>
+        <li>HAVE NO LIMITS</li>
+        <li>
+          <AddIcon className={styles.crossIcon} />
+        </li>
+        <li>Break rules</li>
+      </ul>
     </div>
   );
 };

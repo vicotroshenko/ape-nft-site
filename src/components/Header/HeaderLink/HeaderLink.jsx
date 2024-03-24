@@ -3,8 +3,11 @@ import styles from "./HeaderLink.module.css";
 
 const HeaderLink = forwardRef(({ children, link, visible, openMenu }, ref) => {
   const getStyles = () => {
-    if (!visible) {
+    if (!visible && !openMenu) {
       return `${styles.link}`;
+    }
+    if (!visible && openMenu) {
+      return `${styles.link} ${styles.mobileOpen}`;
     }
     if (visible && openMenu) {
       return `${styles.link} ${styles.light}`;

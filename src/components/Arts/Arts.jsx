@@ -2,65 +2,41 @@ import styles from "./Arts.module.css";
 import Container from "../Container/Container";
 import SubTitle from "../SubTitle/SubTitle";
 import { artCollection } from "../../data/arts";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import SliderButtons from "../SliderButtons/SliderButtons";
-import debounce from "lodash.debounce";
+import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Arts = () => {
-  const [cardNum, setCardNum] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [swiperRef, setSwiperRef] = useState(null);
 
-  const sliderRef = useRef();
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
+  const isDesctop = useMediaQuery({ query: "(min-width: 1280px)" });
 
-  const resizeHandler = (e) => {
-    const width = e.currentTarget.innerWidth;
-    setScreenWidth(width);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", debounce(resizeHandler, 500));
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, []);
-
-  const getShowItems = (width) => {
-    const mobileScreen = width < 768;
-    const tabletScreen = width >= 768 && screenWidth < 1280;
+  const getShowItems = (mobile, tablet, desctop) => {
+    const mobileScreen = mobile && !tablet && !desctop;
+    const tabletScreen = !mobile && tablet && !desctop;
 
     if (mobileScreen) {
-      return { amount: 1, widthEl: 240 };
+      return 1;
     } else if (tabletScreen) {
-      return { amount: 2, widthEl: 308 };
+      return 2;
     } else {
-      return { amount: 4, widthEl: 264 };
+      return 4;
     }
   };
 
-  const showItems = getShowItems(screenWidth);
+  const showItems = getShowItems(isMobile, isTablet, isDesctop);
 
   const handleCardClick = (e) => {
     const { name } = e.currentTarget;
-
     if (name === "prev") {
-      sliderRef.current.style.transform = `translateX(calc(-${
-        showItems.widthEl
-      }px * ${cardNum - 1}))`;
-
-      setCardNum((prev) => prev - 1);
+      swiperRef.slidePrev();
     }
     if (name === "next") {
-      sliderRef.current.style.transform = `translateX(calc(-${
-        showItems.widthEl
-      }px * ${cardNum + 1}))`;
-
-      setCardNum((prev) => {
-        if (cardNum + showItems.amount > artCollection.length) {
-          return prev;
-        } else {
-          return prev + 1;
-        }
-      });
+      swiperRef.slideNext();
     }
   };
 
@@ -68,22 +44,30 @@ const Arts = () => {
     <Container id="arts">
       <SubTitle>COLLECTION</SubTitle>
       <div className={styles.sliderContainer}>
-        <ul className={styles.list} ref={sliderRef}>
-          {artCollection.map(({ mobileImage, desctopImage, id }, index) => (
-            <li className={styles.item} key={id}>
-              <picture className={styles.pictureContainer}>
-                <source srcSet={desctopImage} media="(min-width: 1280px)" />
-                <img src={mobileImage} alt={`slide ${index}`} loading="lazy" />
-              </picture>
-            </li>
-          ))}
+        <ul>
+          <Swiper
+            spaceBetween={24}
+            slidesPerView={showItems}
+            onSwiper={setSwiperRef}
+          >
+            {artCollection.map(({ mobileImage, desctopImage, id }, index) => (
+              <SwiperSlide key={id}>
+                <li className={styles.item}>
+                  <picture className={styles.pictureContainer}>
+                    <source srcSet={desctopImage} media="(min-width: 1280px)" />
+                    <img
+                      src={mobileImage}
+                      alt={`slide ${index}`}
+                      loading="lazy"
+                    />
+                  </picture>
+                </li>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </ul>
       </div>
-      <SliderButtons
-        onClick={handleCardClick}
-        disabledPrev={cardNum === 0}
-        disabledNext={cardNum + showItems.amount === artCollection.length}
-      />
+      <SliderButtons onClick={handleCardClick} />
     </Container>
   );
 };
