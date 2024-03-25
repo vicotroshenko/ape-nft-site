@@ -21,7 +21,7 @@ const LinkBar = ({ openMenu=false }) => {
         <DiscordLogo className={styles.linkLogo} />
       </HeaderLink>
       <HeaderLink
-        link="/"
+        link="https://opensea.io/"
         visible={visible}
         openMenu={openMenu}
         ref={containerRef}

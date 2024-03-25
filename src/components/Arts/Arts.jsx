@@ -1,9 +1,9 @@
 import styles from "./Arts.module.css";
 import Container from "../Container/Container";
 import SubTitle from "../SubTitle/SubTitle";
+import SliderButtons from "../SliderButtons/SliderButtons";
 import { artCollection } from "../../data/arts";
 import { useState } from "react";
-import SliderButtons from "../SliderButtons/SliderButtons";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -44,7 +44,7 @@ const Arts = () => {
     <Container id="arts">
       <SubTitle>COLLECTION</SubTitle>
       <div className={styles.sliderContainer}>
-        <ul>
+        <div>
           <Swiper
             spaceBetween={24}
             slidesPerView={showItems}
@@ -52,7 +52,7 @@ const Arts = () => {
           >
             {artCollection.map(({ mobileImage, desctopImage, id }, index) => (
               <SwiperSlide key={id}>
-                <li className={styles.item}>
+                <div className={styles.item}>
                   <picture className={styles.pictureContainer}>
                     <source srcSet={desctopImage} media="(min-width: 1280px)" />
                     <img
@@ -61,11 +61,11 @@ const Arts = () => {
                       loading="lazy"
                     />
                   </picture>
-                </li>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </ul>
+        </div>
       </div>
       <SliderButtons onClick={handleCardClick} />
     </Container>
