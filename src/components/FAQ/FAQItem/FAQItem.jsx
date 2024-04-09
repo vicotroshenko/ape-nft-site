@@ -1,18 +1,23 @@
-import styles from "./FAQItem.module.css";
 import { useRef } from "react";
+import PropTypes from "prop-types";
+import styles from "./FAQItem.module.css";
 
-const FAQItem = ({ title, text, image, number, isOpen, onClick }) => {
+const FAQItem = ({ title, text, image, image2x, number, isOpen, onClick }) => {
   const contentHeight = useRef();
 
   return (
-    <div className={`${styles.wrapper} ${isOpen ? styles.activeCard : ""}`}>
+    <li className={`${styles.wrapper} ${isOpen ? styles.activeCard : ""}`}>
       {isOpen && (
         <div className={styles.accordionImage}>
-          <img src={image} alt={title} loading="lazy" />
+          <img
+            srcSet={`${image} 1x, ${image2x} 2x`}
+            alt={`NFT example number ${number}`}
+            loading="lazy"
+          />
         </div>
       )}
       <div className={styles.content}>
-        <button className={styles.titleButton} onClick={onClick}>
+        <button className={styles.titleButton} onClick={onClick} aria-label="open text under the title">
           <p
             className={`${styles.titleNumber} ${
               isOpen ? styles.activeNumber : ""
@@ -20,9 +25,9 @@ const FAQItem = ({ title, text, image, number, isOpen, onClick }) => {
           >
             [ {number} ]
           </p>
-          <p className={`${styles.title} ${isOpen ? styles.active : ""}`}>
+          <h4 className={`${styles.title} ${isOpen ? styles.active : ""}`}>
             {title}
-          </p>
+          </h4>
         </button>
         <div
           ref={contentHeight}
@@ -39,8 +44,18 @@ const FAQItem = ({ title, text, image, number, isOpen, onClick }) => {
           <p className={styles.textContent}>{text}</p>
         </div>
       </div>
-    </div>
+    </li>
   );
+};
+
+FAQItem.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.string.isRequired,
+  image2x: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default FAQItem;

@@ -3,8 +3,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 80px;
-	margin-bottom: 24px;
+	padding-top: 60px;
+	padding-bottom: 24px;
 }
 
 .footerContent {
@@ -15,7 +15,8 @@
 
 @media screen and (min-width: 768px) {
 	.footer {
-		margin-bottom: 40px;
+		padding-top: 80px;
+		padding-bottom: 40px;
 	}
 	.footerContent {
 		max-width: none;
@@ -23,6 +24,11 @@
 }
 
 @media screen and (min-width: 1280px) {
+	.footer {
+		padding-top: 120px;
+		padding-bottom: 40px;
+	}
+	
 	.footerContent {
 		font-size: 16px;
 		line-height: 1.187;

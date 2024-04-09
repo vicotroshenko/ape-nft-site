@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./HeroContainer.module.css";
 
 const HeroContainer = ({ children }) => {
@@ -8,6 +9,10 @@ const HeroContainer = ({ children }) => {
       </div>
     </section>
   );
+};
+
+HeroContainer.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default HeroContainer;

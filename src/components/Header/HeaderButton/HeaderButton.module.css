@@ -30,7 +30,7 @@
 	color: var(--secondary-light-color);
 }
 
-.button:hover {
+.button:hover, .button:focus {
 	color: var(--secondary-light-color);
 	text-decoration: underline;
 }

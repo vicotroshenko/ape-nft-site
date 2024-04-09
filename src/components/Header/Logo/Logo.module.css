@@ -1,19 +1,42 @@
 .linkLogo {
 	display: block;
 	margin-top: 8px;
-	cursor:	pointer;
+	cursor: pointer;
 	pointer-events: auto;
 }
 
 .logo {
 	width: 48px;
 	height: 32px;
+	fill: var(--primary-dark-color);
+	transition: fill .25s linear;
+}
+
+.logo:hover, .linkLogo:focus > .logo{
+	fill: var(--secondary-light-color);
+}
+
+.active {
+	fill: var(--secondary-light-color);
+}
+
+.logo.active:hover, .logo.active:focus {
+	fill: var(--third-highlight-color);
 }
 
 .hidden {
 	visibility: hidden;
 }
 
+@media screen and (min-width: 768px) {
+	.active {
+		fill: var(--primary-dark-color);
+	}
+
+	.logo.active:hover, .logo.active:focus {
+		fill: var(--secondary-light-color);
+	}
+}
 
 @media screen and (min-width: 1280px) {
 	.linkLogo {

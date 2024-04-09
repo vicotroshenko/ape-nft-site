@@ -1,11 +1,11 @@
-import ButtonsBar from "./ButtonsBar/ButtonsBar";
-import styles from "./Header.module.css";
-import LinkBar from "./LinksBar/LinksBar";
 import { useEffect, useState } from "react";
-import throttle from "lodash.throttle";
-import MobileMenu from "./MobileMenu/MobileMenu";
-import Logo from "./Logo/Logo";
 import { useMediaQuery } from "react-responsive";
+import throttle from "lodash.throttle";
+import Logo from "./Logo/Logo";
+import ButtonsBar from "./ButtonsBar/ButtonsBar";
+import LinkBar from "./LinksBar/LinksBar";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import styles from "./Header.module.css";
 
 const Header = () => {
   const [visible, setVisible] = useState(true);
@@ -47,7 +47,8 @@ const Header = () => {
       )}
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Logo visible={visible} fill="#1E1E1E" />
+          <Logo visible={visible} openMenu={openMenu} />
+
           <div className={styles.buttonsWrapper}>
             <ButtonsBar
               openMenu={openMenu}

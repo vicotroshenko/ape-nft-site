@@ -1,19 +1,20 @@
 .section {
 	height: auto;
-	padding: 0 8px;
+	padding: 54px 8px 0 8px;
 }
 
 .section, .container, .wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: flex-end;
 	width: 100%;
 }
 
 .container {
 	min-height: 542px;
 	max-width: 480px;
-	min-width: 300px;
+	min-width: 344px;
 	padding: 36px 0 19px 0;
 	border-radius: 12px;
 	background-color: var(--third-highlight-color);
@@ -27,13 +28,13 @@
 
 @media screen and (min-width: 768px) {
 	.section {
-		padding: 0 16px;
+		padding: 54px 16px 0 16px;
 	}
 	
 	.container {
 		min-height: 421px;
 		max-width: 736px;
-		padding: 124px 0 35px 0;
+		padding: 0px 0 35px 0;
 		border-radius: 16px;
 	}
 
@@ -43,11 +44,15 @@
 }
 
 @media screen and (min-width: 1280px) {
+	.section {
+		padding: 16px 16px 0 16px;
+	}
+
 	.container {
 		min-height: 677px;
 		width: 1408px;
 		max-width: none;
-		padding: 197px 0 81px 0;
+		padding: 0px 0 81px 0;
 		border-radius: 24px;
 	}
 

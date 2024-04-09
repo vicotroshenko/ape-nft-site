@@ -1,6 +1,9 @@
+import contents from "../../../data/hero.json";
+import buttonsName from "../../../data/buttons.json";
 import styles from "./HeroAnchor.module.css";
 
 const HeroAnchor = () => {
+  const { greetingText } = contents;
   const getViewElement = (element) =>
     document.querySelector(element).scrollIntoView({
       behavior: "smooth",
@@ -8,12 +11,9 @@ const HeroAnchor = () => {
 
   return (
     <div className={styles.meetAnchor}>
-      <p>
-        Yacht Ape is a collection of unique digital apes that you can own in NFT
-        format
-      </p>
+      <p>{greetingText}</p>
       <button type="button" onClick={() => getViewElement("#contact")}>
-        meet apes
+        {buttonsName.meet}
       </button>
     </div>
   );

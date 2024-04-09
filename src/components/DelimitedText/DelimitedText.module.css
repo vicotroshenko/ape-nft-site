@@ -10,24 +10,59 @@
 	text-align: center;
 }
 
+.text2.about {
+	font-size: 12px;
+	line-height: 1.1666;
+}
+
+.text2.contact {
+	font-size: 16px;
+	line-height: 1.1875;
+}
+
 .text2Icon {
 	display: block;
+	margin: 0 auto 16px auto;
+}
+
+.text2Icon.about {
 	width: 24px;
 	height: 24px;
-	margin: 0 auto 24px auto;
+}
+
+.text2Icon.contact {
+	width: 36px;
+	height: 36px;
 }
 
 
 @media screen and (min-width: 768px) {
-	.text2 {
+	.text2.about {
 		font-size: 16px;
 		line-height: 1.187;
+	}
+
+	.text2Icon {
+		margin: 0 auto 24px auto;
 	}
 }
 
 @media screen and (min-width: 1280px) {
-	
-	.text2 {
+	.text2.about {
+		font-size: 24px;
+		line-height: 1.2083;
+	}
+
+	.text2Icon {
+		margin: 0 auto 36px auto;
+	}
+
+	.text2Icon.about {
+		width: 36px;
+		height: 36px;
+	}
+
+	.text2.contact {
 		font-size: 24px;
 		line-height: 1.208;
 	}

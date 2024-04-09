@@ -16,7 +16,7 @@
 	transition: fill .25s linear;
 }
 
-.link:hover svg {
+.link:hover svg, .link:focus svg  {
 	fill: var(--secondary-light-color);
 }
 
@@ -32,7 +32,7 @@
 	transition: all .25s linear;
 }
 
-.link.light:hover>svg {
+.link.light:hover>svg, .link.light:focus>svg {
 	fill: var(--third-highlight-color);
 }
 

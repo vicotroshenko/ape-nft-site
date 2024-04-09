@@ -1,5 +1,5 @@
 import About from "../About/About";
-import Arts from "../Arts/Arts";
+import Arts from "../Arts/Arts.jsx";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";

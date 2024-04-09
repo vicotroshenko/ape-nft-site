@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useElementOnScreen } from "../../../hooks/useElementOnScreen";
 import styles from "./HeaderButton.module.css";
 
@@ -32,6 +33,13 @@ const HeaderButton = ({ children, onClick, visibleMenu, name }) => {
       {children}
     </button>
   );
+};
+
+HeaderButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  visibleMenu: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default HeaderButton;

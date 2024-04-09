@@ -1,14 +1,16 @@
+import contents from "../../../data/hero.json";
 import styles from "./HeroTitle.module.css";
 
 const HeroTitle = () => {
+  const { overText, title, underText } = contents;
   return (
     <div className={styles.titleContainer}>
-      <p>diD yOu seE iT ?</p>
+      <p>{overText}</p>
       <h1>
-        <span>yacht</span>
-        <span>apes</span>
+        <span>{title.slice(0, 5)}</span>
+        <span>{title.slice(5, title.length)}</span>
       </h1>
-      <p>Apes aRe eveRywhere</p>
+      <p className={styles.desctopRight}>{underText}</p>
     </div>
   );
 };

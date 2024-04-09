@@ -1,5 +1,5 @@
-:root{
-  --sloganLine-height-mobile: 52px;
+:root {
+	--sloganLine-height-mobile: 52px;
 	--sloganLine-height-desctop: 86px;
 }
 
@@ -11,20 +11,11 @@
 	padding-bottom: var(--sloganLine-height-mobile);
 }
 
-
 .title {
 	font-family: "Right Grotesk Compact", fantasy;
 	font-size: 40px;
 	font-weight: 900;
 	text-align: left;
-}
-
-.title>span {
-	display: block;
-}
-
-.title>span:nth-child(-n+2) {
-	display: inline;
 }
 
 .red {
@@ -33,28 +24,27 @@
 
 .text1 {
 	display: inline-block;
-	margin-top: 16px;
+	padding-top: 16px;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.187;
-	text-align: right;
-}
-
-.text1>span:nth-child(-n+3),
-.text1>span:nth-child(6),
-.text1>span:nth-child(7) {
-	display: block;
+	text-align: end;
+	text-indent: 50%;
 }
 
 .picture {
 	display: inline-block;
 	width: 100%;
 	max-width: 216px;
-	margin-top: 40px;
+	margin: 40px auto 0 auto;
 }
 
 .text2Wrapper {
-	margin-top: 36px;
+	padding-top: 36px;
+}
+
+.divideLastWordTitle {
+	display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -69,31 +59,14 @@
 		font-size: 60px;
 	}
 
-	.title>span:nth-child(-n+2) {
-		display: block;
-	}
-
-	.title>span:nth-last-child(-n + 2) {
-		display: inline;
-	}
-
 	.text1 {
-		margin-top: 11px;
+		padding-top: 11px;
 		justify-self: end;
-	}
-
-	.text1>span:nth-child(-n+3),
-	.text1>span:nth-child(6),
-	.text1>span:nth-child(7) {
-		display: inline;
-	}
-
-	.text1>span:last-child {
-		display: block;
+		text-indent: 0;
 	}
 
 	.text2Wrapper {
-		margin-top: 68px;
+		padding-top: 68px;
 		max-width: 417px;
 	}
 
@@ -104,6 +77,15 @@
 		max-width: 313px;
 		margin-top: 0;
 	}
+
+	.divideLastWordTitle {
+		display: inline;
+	}
+
+	.text1LastWordDivider {
+		display: block;
+	}
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -119,17 +101,14 @@
 	}
 
 	.text1 {
-		margin-top: 24px;
-	}
-
-	.text1 {
 		max-width: 409px;
+		padding-top: 24px;
 		font-size: 24px;
 		line-height: 1.208;
 	}
 
 	.text2Wrapper {
-		margin-top: 56px;
+		padding-top: 56px;
 	}
 
 	.picture {

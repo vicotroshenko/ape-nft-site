@@ -3,16 +3,17 @@
 	gap: 48px;
 	justify-content: center;
 	width: 100%;
-	margin-top: 24px;
+	padding-top: 24px;
 }
 
 .buttons>button {
 	border: none;
+	padding: 0;
 	background-color: transparent;
 	text-transform: capitalize;
 	font-family: 'Biro Script Plus Bold US', cursive;
 	font-size: 24px;
-	line-height: 1;
+	line-height: 1.25;
 	color: var(--secondary-light-color);
 	cursor: pointer;
 	transition: color .1s linear;
@@ -24,6 +25,6 @@
 
 @media screen and (min-width: 1280px) {
 	.buttons{
-		margin-top: 48px;
+		padding-top: 48px;
 	}
 }

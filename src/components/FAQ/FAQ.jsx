@@ -1,12 +1,15 @@
 import { useState } from "react";
+import contents from "../../data/faq.json";
 import Container from "../Container/Container";
-import FAQItem from "./FAQItem/FAQItem";
 import SubTitle from "../SubTitle/SubTitle";
+import FAQItem from "./FAQItem/FAQItem";
+import pictures from "./pictures";
 import styles from "./FAQ.module.css";
-import { faqCollection } from "../../data/faq";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState("11111");
+
+  const { title, accordion } = contents;
 
   const handleItemClick = (id) => {
     setActiveIndex(id);
@@ -14,20 +17,21 @@ const FAQ = () => {
 
   return (
     <Container id="faq">
-      <SubTitle>faq</SubTitle>
-      <div className={styles.itemsWrapper}>
-        {faqCollection.map(({ title, text, id, image }, index) => (
+      <SubTitle>{title}</SubTitle>
+      <ul className={styles.itemsWrapper}>
+        {pictures.map(({ image, image2x }, index) => (
           <FAQItem
-            title={title}
-            text={text}
+            title={accordion[index].title}
+            text={accordion[index].text}
             image={image}
+            image2x={image2x}
             number={index + 1}
-            isOpen={activeIndex === id}
-            onClick={() => handleItemClick(id)}
-            key={id}
+            isOpen={activeIndex === accordion[index].id}
+            onClick={() => handleItemClick(accordion[index].id)}
+            key={accordion[index].id}
           />
         ))}
-      </div>
+      </ul>
     </Container>
   );
 };

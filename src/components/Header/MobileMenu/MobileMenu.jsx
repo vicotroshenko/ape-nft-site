@@ -1,30 +1,34 @@
-import styles from "./MobileMenu.module.css";
+import PropTypes from "prop-types";
+import buttonsName from "../../../data/buttons.json";
+import footerContents from "../../../data/footer.json";
 import Modal from "../../Modal/Modal";
+import Logo from "../Logo/Logo";
 import ButtonsBar from "../ButtonsBar/ButtonsBar";
 import LinksBar from "../LinksBar/LinksBar";
-import Logo from "../Logo/Logo";
+import styles from "./MobileMenu.module.css";
 
 const MobileMenu = ({ toggle, visible, getViewElement }) => {
+  const { headerButtons } = buttonsName;
   return (
     <Modal toggle={toggle} visible={visible}>
       <div className={styles.mobileMenu}>
         <div className={styles.container}>
-          <Logo fill="#ffffff" visible={true}/>
+          <Logo visible={true} />
           <div className={styles.mobileButtonBar}>
             <button type="button" onClick={() => getViewElement("#about")}>
-              About
+              {headerButtons.about}
             </button>
             <button type="button" onClick={() => getViewElement("#mind")}>
-              m-map
+              {headerButtons.map}
             </button>
             <button type="button" onClick={() => getViewElement("#faq")}>
-              faq
+              {headerButtons.faq}
             </button>
             <button type="button" onClick={() => getViewElement("#arts")}>
-              arts
+              {headerButtons.arts}
             </button>
             <button type="button" onClick={() => getViewElement("#contact")}>
-              mint
+              {headerButtons.mint}
             </button>
           </div>
           <div>
@@ -37,11 +41,17 @@ const MobileMenu = ({ toggle, visible, getViewElement }) => {
           </div>
         </div>
         <div className={styles.bottomText}>
-          <p>© Yacht ape 2024 all rights reserved</p>
+          <p>{footerContents.footerText}</p>
         </div>
       </div>
     </Modal>
   );
+};
+
+MobileMenu.propTypes = {
+  toggle: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+  getViewElement: PropTypes.func.isRequired,
 };
 
 export default MobileMenu;

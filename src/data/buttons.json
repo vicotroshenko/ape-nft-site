@@ -1,0 +1,19 @@
+{
+  "meet": "meet apes",
+  "prev": "prev",
+  "next": "next",
+	"formButton": {
+    "default": "mint",
+    "success": "minted",
+    "error": "error"
+  },
+  "headerButtons": {
+    "about": "about",
+    "map": "m-map",
+    "faq": "faq",
+    "arts": "arts",
+    "mint": "mint",
+    "close": "close",
+    "open": "menu"
+  }
+}

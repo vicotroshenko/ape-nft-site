@@ -5,6 +5,7 @@
 	row-gap: 12px;
 	width: 100%;
 	max-width: 216px;
+	line-height: 1.166;
 	text-align: center;
 	z-index: 10;
 }
@@ -19,7 +20,7 @@
 	font-size: 16px;
 	font-family: "Right Grotesk Compact", fantasy;
 	font-weight: 900;
-	line-height: 1.187;
+	line-height: 1.1875;
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: color .3s linear;
@@ -39,15 +40,12 @@
 		margin-left: auto;
 		line-height: 1.166;
 		text-align: justify;
+		text-indent: 79px;
 	}
 
-	.meetAnchor>p::before {
-		content: "";
-		display: inline-block;
-		width: 60px;
-	}
 
 	.meetAnchor>button {
+		min-width: auto;
 		padding: 10px 61px 12px 61px;
 		border-radius: 12px;
 	}
@@ -60,12 +58,7 @@
 		max-width: 337px;
 		font-size: 16px;
 		line-height: 1.187;
-	}
-
-	.meetAnchor>p::before {
-		content: "";
-		display: inline-block;
-		width: 80px;
+		text-indent: 84px;
 	}
 
 	.meetAnchor>button {

@@ -1,7 +1,7 @@
 .header {
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 54px;
 	width: 100%;
 	z-index: 44;
 	pointer-events: none;
@@ -34,6 +34,10 @@
 }
 
 @media screen and (min-width: 1280px) {
+	.header {
+		top: 16px;
+	}
+
 	.headerContainer {
 		max-width: 1440px;
 		padding: 24px 112px 0 112px;

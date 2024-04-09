@@ -1,11 +1,12 @@
-import styles from "./Arts.module.css";
-import Container from "../Container/Container";
-import SubTitle from "../SubTitle/SubTitle";
-import SliderButtons from "../SliderButtons/SliderButtons";
-import { artCollection } from "../../data/arts";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
+import contents from "../../data/arts.json";
+import Container from "../Container/Container";
+import SubTitle from "../SubTitle/SubTitle";
+import SliderButtons from "../SliderButtons/SliderButtons";
+import pictures from "./pictures";
+import styles from "./Arts.module.css";
 import "swiper/css";
 
 const Arts = () => {
@@ -42,19 +43,30 @@ const Arts = () => {
 
   return (
     <Container id="arts">
-      <SubTitle>COLLECTION</SubTitle>
+      <SubTitle>{contents.title}</SubTitle>
       <div className={styles.sliderContainer}>
-        <div>
-          <Swiper
-            spaceBetween={24}
-            slidesPerView={showItems}
-            onSwiper={setSwiperRef}
-          >
-            {artCollection.map(({ mobileImage, desctopImage, id }, index) => (
-              <SwiperSlide key={id}>
+        <Swiper
+          spaceBetween={24}
+          slidesPerView={showItems}
+          onSwiper={setSwiperRef}
+          wrapperTag="ul"
+        >
+          {pictures.map(
+            (
+              { mobileImage, mobileImage2x, desctopImage, desctopImage2x, id },
+              index
+            ) => (
+              <SwiperSlide key={id} tag="li">
                 <div className={styles.item}>
                   <picture className={styles.pictureContainer}>
-                    <source srcSet={desctopImage} media="(min-width: 1280px)" />
+                    <source
+                      srcSet={`${desctopImage} 1x, ${desctopImage2x} 2x`}
+                      media="(min-width: 1280px)"
+                    />
+                    <source
+                      srcSet={`${mobileImage} 1x, ${mobileImage2x} 2x`}
+                      media="(max-width: 1279px)"
+                    />
                     <img
                       src={mobileImage}
                       alt={`slide ${index}`}
@@ -63,11 +75,11 @@ const Arts = () => {
                   </picture>
                 </div>
               </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+            )
+          )}
+        </Swiper>
       </div>
-      <SliderButtons onClick={handleCardClick} />
+      <SliderButtons onClick={handleCardClick} lineHeight="1.25" />
     </Container>
   );
 };

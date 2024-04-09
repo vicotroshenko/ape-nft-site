@@ -2,13 +2,27 @@
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-	padding: 8px 8px 8px 39px;
+	padding: 0px 8px 0px 39px;
 	border-radius: 12px;
+	list-style-type: none;
 }
 
 .wrapper.activeCard {
+	padding: 8px 8px 8px 39px;
 	background-color: var(--primary-dark-color);
 	animation: bgChanger .25s linear;
+}
+
+.wrapper.activeCard:first-child {
+	margin: 0px auto -8px auto;
+}
+
+.wrapper.activeCard:last-child {
+	margin: -8px auto 0px auto;
+}
+
+.wrapper.activeCard:not(:first-child, :last-child){
+	margin: -8px auto -8px auto;
 }
 
 .titleButton {
@@ -29,6 +43,11 @@
 	line-height: 1;
 	font-weight: 900;
 	color: var(--secondary-light-color);
+	transition: all .25s linear;
+}
+
+.title:hover, .titleButton:focus > .title {
+	color: var(--third-highlight-color);
 }
 
 .title.active,
@@ -40,7 +59,7 @@
 
 .titleNumber {
 	position: absolute;
-	top: 12px;
+	top: 0;
 	left: -31px;
 	font-family: 'Biro Script Plus Bold US', cursive;
 	font-size: 12px;
@@ -74,11 +93,27 @@
 
 @media screen and (min-width: 768px) {
 	.wrapper {
-		padding: 18px 16px 23px 39px;
+		padding: 0px 16px 0px 39px;
 		border-radius: 16px;
 
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.wrapper.activeCard {
+		padding: 18px 16px 23px 39px;
+	}
+
+	.wrapper.activeCard:first-child {
+		margin: 0px auto -18px auto;
+	}
+	
+	.wrapper.activeCard:last-child {
+		margin: -18px auto 0px auto;
+	}
+	
+	.wrapper.activeCard:not(:first-child, :last-child){
+		margin: -18px auto -18px auto;
 	}
 
 	.title {
@@ -86,7 +121,7 @@
 	}
 
 	.titleNumber {
-		top: 24px;
+		top: 0;
 		left: -33px;
 		font-size: 16px;
 		line-height: 1.687;
@@ -120,8 +155,24 @@
 
 @media screen and (min-width: 1280px) {
 	.wrapper {
-		padding: 24px 24px 24px 39px;
+		padding: 0px 24px 0px 39px;
 		border-radius: 24px;
+	}
+
+	.wrapper.activeCard {
+		padding: 24px 24px 24px 39px;
+	}
+
+	.wrapper.activeCard:first-child {
+		margin: 0px auto -24px auto;
+	}
+	
+	.wrapper.activeCard:last-child {
+		margin: -24px auto 0px auto;
+	}
+	
+	.wrapper.activeCard:not(:first-child, :last-child){
+		margin: -24px auto -24px auto;
 	}
 
 	.title {
@@ -129,7 +180,7 @@
 	}
 
 	.titleNumber {
-		top: 36px;
+		top: 0;
 		left: -51px;
 		font-size: 24px;
 		line-height: 1.66;
@@ -144,8 +195,10 @@
 	.accordionImage {
 		top: -14px;
 		left: 18px;
-		max-width: 248px;
-		min-height: 282px;
+		width: 248px;
+		height: 282px;
+		max-width: none;
+		min-height: auto;
 		border-radius: 24px;
 		transform: rotate(-8deg);
 	}
